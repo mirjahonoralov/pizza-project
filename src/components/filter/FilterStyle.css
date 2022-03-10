@@ -1,0 +1,31 @@
+/* .filter-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  top: 100px;
+} */
+
+.filter-card {
+  position: absolute;
+  /* top: 0; */
+  width: 500px;
+  height: 100vh;
+  left: -100%;
+  z-index: 10;
+  transition: 0.5s ease-in;
+}
+
+.show-filter-card {
+  left: 0;
+}
+
+.filter-btn {
+  padding: 2px 7px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.filter-btn-clicked {
+  background-color: #ff7010;
+}
