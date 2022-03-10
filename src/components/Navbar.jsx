@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import location from "../assets/icons/Location.png";
 import accountIcon from "../assets/icons/Account.png";
 import pizza from "../assets/icons/Group 2.png";
 import card from "../assets/icons/Group 94.png";
 import Button from "./Button";
-import { BsChevronDown } from "react-icons/bs";
+// import { BsChevronDown } from "react-icons/bs";
 import { ProductContext } from "../contexts/ProductContextProvider";
 
 const Navbar = () => {
@@ -57,14 +57,14 @@ const Navbar = () => {
             <img src={pizza} alt="" /> Куда пицца
           </div>
           <div className={` ${hidden} menus d-flex gap-4 align-items-center`}>
-            <a href="#">Акции</a>
-            <a href="#">Пицца</a>
-            <a href="#">Суши</a>
-            <a href="#">Напитки</a>
-            <a href="#">Закуски</a>
-            <a href="#">Комбо</a>
-            <a href="#">Десерты</a>
-            <a href="#">Соусы</a>
+            <a href="#discount">Акции</a>
+            <a href="#pizza">Пицца</a>
+            <a href="#sushi">Суши</a>
+            <a href="#drik">Напитки</a>
+            <a href="#snack">Закуски</a>
+            <a href="#kombo">Комбо</a>
+            <a href="#dessert">Десерты</a>
+            <a href="#souce">Соусы</a>
 
             <div class="dropdown">
               <button
@@ -78,37 +78,37 @@ const Navbar = () => {
               </button>
               <ul class="dropdown-menu" aria-labelledby="more">
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#discount">
                     Акции
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#pizza">
                     Пользовательское соглашение
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#guarantee">
                     Условия гарантии
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#restaruant">
                     Ресторан
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#contact">
                     Контакты
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#support">
                     Поддержка
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#order">
                     Отследить заказ
                   </a>
                 </li>

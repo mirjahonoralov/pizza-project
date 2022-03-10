@@ -9,6 +9,7 @@ import { ProductContext } from "../../contexts/ProductContextProvider";
 const FilterMenus = ({ data }) => {
   const { title, menus } = data;
   const [clickBtn, setClickBtn] = useState("");
+  // const {} = useContext(ProductContext)
   return (
     <div className="my-2">
       <p className="opacity-75 mb-1">{title}</p>
