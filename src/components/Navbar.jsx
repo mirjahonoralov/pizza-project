@@ -6,6 +6,8 @@ import card from "../assets/icons/Group 94.png";
 import Button from "./Button";
 // import { BsChevronDown } from "react-icons/bs";
 import { ProductContext } from "../contexts/ProductContextProvider";
+import SelectedProducts from "./selectedProducts/SelectedProducts";
+import SaleBtn from "./SaleBtn";
 
 const Navbar = () => {
   const { sum } = useContext(ProductContext);
@@ -50,7 +52,7 @@ const Navbar = () => {
       {/* ----navbar---- */}
       <section
         className={`navbar bg-white py-3 ${fixedNav}`}
-        style={{ zIndex: 5 }}
+        style={{ zIndex: 5, transform: "0.5s linear all" }}
       >
         <div className={`container  bg-white `}>
           <div>
@@ -66,9 +68,9 @@ const Navbar = () => {
             <a href="#dessert">Десерты</a>
             <a href="#souce">Соусы</a>
 
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn dropdown-toggle"
+                className="btn dropdown-toggle"
                 type="button"
                 id="more"
                 data-bs-toggle="dropdown"
@@ -76,39 +78,39 @@ const Navbar = () => {
               >
                 Другое
               </button>
-              <ul class="dropdown-menu" aria-labelledby="more">
+              <ul className="dropdown-menu" aria-labelledby="more">
                 <li>
-                  <a class="dropdown-item" href="#discount">
+                  <a className="dropdown-item" href="#discount">
                     Акции
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#pizza">
+                  <a className="dropdown-item" href="#pizza">
                     Пользовательское соглашение
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#guarantee">
+                  <a className="dropdown-item" href="#guarantee">
                     Условия гарантии
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#restaruant">
+                  <a className="dropdown-item" href="#restaruant">
                     Ресторан
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#contact">
+                  <a className="dropdown-item" href="#contact">
                     Контакты
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#support">
+                  <a className="dropdown-item" href="#support">
                     Поддержка
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#order">
+                  <a className="dropdown-item" href="#order">
                     Отследить заказ
                   </a>
                 </li>
@@ -118,7 +120,8 @@ const Navbar = () => {
               Другое <BsChevronDown />
             </a> */}
           </div>
-          <Button value={`${sum} ₽`} icon={card} />
+          <SaleBtn value={sum} icon={card} />
+          <SelectedProducts />
         </div>
       </section>
     </>

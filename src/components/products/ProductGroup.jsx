@@ -4,8 +4,8 @@ import PruductCard from "./PruductCard";
 const ProductGroup = ({ data }) => {
   return (
     <div className="row d-flex">
-      {data.map((item, id) => {
-        return <PruductCard key={id} {...item} />;
+      {data.map((product, id) => {
+        return <PruductCard key={id} product={product} />;
       })}
     </div>
   );

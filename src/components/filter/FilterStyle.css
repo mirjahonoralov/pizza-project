@@ -8,16 +8,19 @@
 
 .filter-card {
   position: absolute;
-  /* top: 0; */
   width: 500px;
   height: 100vh;
   left: -100%;
   z-index: 10;
-  transition: 0.5s ease-in;
+  transform: 0.5s linear all;
 }
 
 .show-filter-card {
   left: 0;
+}
+
+.fixed-top {
+  transform: 0.5s linear all;
 }
 
 .filter-btn {

@@ -1,81 +1,81 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import filter from "../../assets/icons/Filter.png";
-// import { first, fourth, second, third } from "./FilterData";
-import { GrClose } from "react-icons/gr";
 import "./FilterStyle.css";
 import Button from "../Button";
 import { ProductContext } from "../../contexts/ProductContextProvider";
 
-const FilterMenus = ({ data }) => {
-  const { title, menus } = data;
-  const [clickBtn, setClickBtn] = useState("");
-  // const {} = useContext(ProductContext)
+const FilterMenus = ({ menu }) => {
+  const { updatedFilterData, filterFunction } = useContext(ProductContext);
+  const curr = updatedFilterData.filter((item) => item.type === menu);
+
   return (
     <div className="my-2">
-      <p className="opacity-75 mb-1">{title}</p>
+      <p className="opacity-75 mb-1">{curr[0].type}</p>
       <div className="d-flex flex-wrap gap-2">
-        {menus.map((item) => {
-          return (
-            <button
-              className={`filter-btn border ${clickBtn}`}
-              key={item.id}
-              onClick={() => setClickBtn("filter-btn-clicked")}
-            >
-              {item.name}
-            </button>
-          );
-        })}
+        {curr
+          .filter((item) => item.type === menu)
+          .map((item) => {
+            return (
+              <button
+                className={`filter-btn border`}
+                key={item.id}
+                style={{ backgroundColor: `${item.selected && "#ff7010"}` }}
+                onClick={() => filterFunction(item.id)}
+              >
+                {item.name}
+              </button>
+            );
+          })}
       </div>
     </div>
   );
 };
 
-const Fillter = ({ product }) => {
-  const { filterDatas } = useContext(ProductContext);
-  const [first, second, third, fourth] = filterDatas;
+const Fillter = ({ product, id }) => {
+  const { filterMenus } = useContext(ProductContext);
+
   return (
     <>
       <div className={`my-4 d-flex justify-content-between align-items-center`}>
-        <h1>{product}</h1>
-        <button
+        <h1 id={id}>{product}</h1>
+        <div
+          className="btn bg-white"
           type="button"
-          className="btn"
-          style={{ background: "#fff" }}
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
         >
           <img src={filter} alt="" /> Фильтры
-        </button>
+        </div>
         <div
-          className="modal fade"
-          id="exampleModal"
+          className="offcanvas offcanvas-end"
+          id="offcanvasRight"
           tabIndex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
+          aria-labelledby="offcanvasRightLabel"
         >
-          <div className="modal-dialog">
-            <div className="p-3 bg-white modal-content">
-              <div className="d-flex justify-content-between">
-                <h2 className="my-0">Фильтры</h2>
-                <GrClose
-                  style={{ cursor: "pointer" }}
-                  className="btn-close"
-                  aria-label="Close"
-                  data-bs-dismiss="modal"
-                />
-              </div>
-              <FilterMenus data={first} />
-              <FilterMenus data={second} />
-              <FilterMenus data={third} />
-              <FilterMenus data={fourth} />
-              <div className="d-flex justify-content-between px-3">
-                <Button
-                  value="Сбросить"
-                  style={{ padding: "20px" }}
-                  outline="true"
-                />
-                <Button value="Применить" />
-              </div>
+          <div
+            className="p-3 bg-white offcanvas-body"
+            style={{ borderRadius: "0px" }}
+          >
+            <div className="d-flex justify-content-between">
+              <h3 className="my-0">Фильтры</h3>
+              <button
+                type="button"
+                className="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            {filterMenus.map((menu, id) => {
+              return <FilterMenus menu={menu} key={id} />;
+            })}
+            <div className="d-flex justify-content-between px-3">
+              <Button
+                value="Сбросить"
+                style={{ padding: "20px" }}
+                outline="true"
+              />
+              <Button value="Применить" />
             </div>
           </div>
         </div>

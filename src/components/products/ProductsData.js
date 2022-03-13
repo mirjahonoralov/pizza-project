@@ -1,3 +1,12 @@
+// ------- product-modal-icons ---------
+import icon1 from "../../assets/product-modal-icons/icon1.png";
+import icon2 from "../../assets/product-modal-icons/icon2.png";
+import icon3 from "../../assets/product-modal-icons/icon3.png";
+import icon4 from "../../assets/product-modal-icons/icon4.png";
+import icon5 from "../../assets/product-modal-icons/icon5.png";
+import icon6 from "../../assets/product-modal-icons/icon6.png";
+import icon7 from "../../assets/product-modal-icons/icon7.png";
+
 import pizza1 from "../../assets/products/pizza1.png";
 import pizza2 from "../../assets/products/pizza2.png";
 import pizza3 from "../../assets/products/pizza3.png";
@@ -16,6 +25,7 @@ import dessert2 from "../../assets/products/dessert2.png";
 import dessert3 from "../../assets/products/dessert3.png";
 import dessert4 from "../../assets/products/dessert4.png";
 import dessert5 from "../../assets/products/dessert5.png";
+import uuid from "react-uuid";
 
 export const PizzaData = [
   {
@@ -24,6 +34,10 @@ export const PizzaData = [
     text: "Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соу...",
     price: "456",
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: pizza2,
@@ -31,6 +45,10 @@ export const PizzaData = [
     text: "Курица, Лук, Перец Халапеньо...",
     price: "594",
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: pizza3,
@@ -38,6 +56,10 @@ export const PizzaData = [
     text: "Курица, Лук, Соус Карбонара,...",
     price: "249",
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: pizza4,
@@ -45,6 +67,10 @@ export const PizzaData = [
     text: "Бекон, Ветчина, Грибы, Курица, Лук, Маслины, Огурцы мари...",
     price: "630",
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: pizza1,
@@ -52,6 +78,10 @@ export const PizzaData = [
     text: "Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соу...",
     price: "456",
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: pizza2,
@@ -59,6 +89,10 @@ export const PizzaData = [
     text: "Курица, Лук, Перец Халапеньо...",
     price: "594",
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: pizza3,
@@ -66,6 +100,10 @@ export const PizzaData = [
     text: "Курица, Лук, Соус Карбонара,...",
     price: "249",
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: pizza4,
@@ -73,6 +111,10 @@ export const PizzaData = [
     text: "Бекон, Ветчина, Грибы, Курица, Лук, Маслины, Огурцы мари...",
     price: "630",
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
 ];
 
@@ -83,6 +125,10 @@ export const SushiData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: sushi2,
@@ -90,6 +136,10 @@ export const SushiData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 395,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: sushi3,
@@ -97,6 +147,10 @@ export const SushiData = [
     text: "Действительно много семги, сливочный сыр, огурец, рис, н...",
     price: 425,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: sushi4,
@@ -104,6 +158,10 @@ export const SushiData = [
     text: "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
     price: 525,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: sushi4,
@@ -111,6 +169,10 @@ export const SushiData = [
     text: "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
     price: 525,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: sushi3,
@@ -118,6 +180,10 @@ export const SushiData = [
     text: "Действительно много семги, сливочный сыр, огурец, рис, н...",
     price: 425,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: sushi1,
@@ -125,6 +191,10 @@ export const SushiData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: sushi2,
@@ -132,6 +202,10 @@ export const SushiData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 395,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
 ];
 
@@ -142,6 +216,10 @@ export const ZapuskData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: zapusk2,
@@ -149,6 +227,10 @@ export const ZapuskData = [
     text: "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
     price: 395,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: zapusk3,
@@ -156,6 +238,10 @@ export const ZapuskData = [
     text: "Действительно много семги, сливочный сыр, огурец, рис, н...",
     price: 425,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: zapusk4,
@@ -163,6 +249,10 @@ export const ZapuskData = [
     text: "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
     price: 525,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: zapusk4,
@@ -170,6 +260,10 @@ export const ZapuskData = [
     text: "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
     price: 525,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: zapusk3,
@@ -177,6 +271,10 @@ export const ZapuskData = [
     text: "Действительно много семги, сливочный сыр, огурец, рис, н...",
     price: 425,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: zapusk5,
@@ -184,6 +282,10 @@ export const ZapuskData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: zapusk5,
@@ -191,6 +293,10 @@ export const ZapuskData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
 ];
 
@@ -201,6 +307,10 @@ export const DessertsData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: dessert2,
@@ -208,6 +318,10 @@ export const DessertsData = [
     text: "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
     price: 395,
     isNew: true,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: dessert3,
@@ -215,6 +329,10 @@ export const DessertsData = [
     text: "Действительно много семги, сливочный сыр, огурец, рис, н...",
     price: 425,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: dessert4,
@@ -222,6 +340,10 @@ export const DessertsData = [
     text: "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
     price: 525,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: dessert5,
@@ -229,6 +351,10 @@ export const DessertsData = [
     text: "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
     price: 525,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: dessert1,
@@ -236,6 +362,10 @@ export const DessertsData = [
     text: "Действительно много семги, сливочный сыр, огурец, рис, н...",
     price: 425,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: dessert2,
@@ -243,6 +373,10 @@ export const DessertsData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
   {
     img: dessert3,
@@ -250,7 +384,21 @@ export const DessertsData = [
     text: "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
     price: 475,
     isNew: false,
+    defaultSize: 23,
+    desc: "Lorem ipsum dolor sit.",
+    count: 0,
+    id: uuid(),
   },
+];
+
+export const productModalIcons = [
+  icon1,
+  icon2,
+  icon3,
+  icon4,
+  icon5,
+  icon6,
+  icon7,
 ];
 
 // export const Data = [

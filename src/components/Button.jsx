@@ -3,18 +3,28 @@ import styled from "styled-components";
 
 const Btn = styled.button`
   border-radius: 4px;
-  padding: 8px 16px;
-  background-color: ${(props) => (props.disabled ? "#ffa970" : "#ff7010")};
-  background-color: ${(props) => (props.outline ? "#fff" : "#ff7010")};
+  padding: ${({ padding }) => (padding ? padding : "8px 16px")};
+
+  background-color: ${({ disabled, outline }) => {
+    if (disabled) return "#ffa970";
+    else if (outline) return "#fff";
+    else return "#ff7010";
+  }};
+
   border: none;
   color: ${(props) => (props.outline ? "#ff7010" : "#fff")};
   border: ${(props) => (props.outline ? "1px solid #ff7010" : "nones")};
+  cursor: pointer;
+  :hover {
+    background-color: #ff7010;
+    color: #fff;
+  }
 `;
 
-const Button = ({ value, icon, isDisabled, outline }) => {
+const Button = ({ value, isDisabled, outline, padding }) => {
   return (
-    <Btn disabled={isDisabled} outline={outline}>
-      {icon && <img src={icon} alt="" className="me-1" />} {value}
+    <Btn disabled={isDisabled} outline={outline} padding={padding}>
+      {value}
     </Btn>
   );
 };

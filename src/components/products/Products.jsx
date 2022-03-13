@@ -7,16 +7,20 @@ const Products = () => {
   return (
     <section>
       <div className="container">
-        <Fillter product="Пицца" />
+        <Fillter product="Пицца" id="pizza" />
         <ProductGroup data={PizzaData} />
 
-        <Fillter product="Суши" />
+        <Fillter product="Суши" id="sushi" />
         <ProductGroup data={SushiData} />
 
-        <h1 className="my-4">Закуски</h1>
+        <h1 className="my-4" id="snack">
+          Закуски
+        </h1>
         <ProductGroup data={ZapuskData} />
 
-        <h1 className="my-4">Десерты</h1>
+        <h1 className="my-4" id="dessert">
+          Десерты
+        </h1>
         <ProductGroup data={DessertsData} />
       </div>
     </section>
