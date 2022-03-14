@@ -23,9 +23,7 @@ const Navbar = () => {
     }
   }
 
-  // useEffect(() => {
   window.addEventListener("scroll", scroll);
-  // }, []);
 
   return (
     <>

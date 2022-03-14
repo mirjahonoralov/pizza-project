@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import { filterData, filterMenus } from "../components/filter/FilterData";
 const btns = document.getElementsByClassName("filter-btn");
 
@@ -9,24 +9,45 @@ const ProductContextProvider = (props) => {
   const [updatedFilterData, setUpdatedFilterData] = useState(filterData);
   const [salesCardProducts, setSalesCardProducts] = useState([]);
 
-  const increaseProductCount = (item) => {
-    let index;
-    console.log("salesCardProducts: ", salesCardProducts);
-    salesCardProducts.map((product, id) => {
-      if (product.id === item.id) {
-        index = salesCardProducts.indexOf(product);
-        console.log("salesCardProducts[index]", salesCardProducts[index]);
-        salesCardProducts[index].count += 1;
-        setSalesCardProducts(salesCardProducts);
-        // console.log("index", index);
-      }
+  const productCounter = (item, action) => {
+    let value = 0,
+      index;
+    if (action === "increase") {
+      value = 1;
+      setSum(sum + parseInt(item.price));
+    } else if (action === "decrease" && item.count > 0) {
+      value = -1;
+      setSum(sum - parseInt(item.price));
+    }
+    salesCardProducts.map((product) => {
+      if (product.id === item.id) index = salesCardProducts.indexOf(product);
     });
-    console.log("new salesCardProducts", salesCardProducts);
-    // setSalesCardProducts(salesCardProducts);
+
+    setSalesCardProducts(
+      salesCardProducts.map((product, id) => {
+        if (id === index) {
+          if (product.count === 0 && action === "decrease") return product;
+          product.count += value;
+          return product;
+        } else return product;
+      })
+    );
   };
 
   const addProduct = (item) => {
-    setSalesCardProducts([...salesCardProducts, item]);
+    let isSameProduct = false;
+    salesCardProducts.map((product) => {
+      if (product.id === item.id) {
+        product.count += 1;
+        setSalesCardProducts(salesCardProducts);
+        isSameProduct = true;
+      }
+    });
+
+    if (!isSameProduct) {
+      item.count = 1;
+      setSalesCardProducts([...salesCardProducts, item]);
+    }
     setSum(sum + parseInt(item.price));
   };
 
@@ -47,7 +68,7 @@ const ProductContextProvider = (props) => {
         filterMenus,
         filterFunction,
         salesCardProducts,
-        increaseProductCount,
+        productCounter,
       }}
     >
       {props.children}

@@ -4,7 +4,7 @@ import Button from "../Button";
 import SelectedProduct from "./SelectProduct";
 
 const SelectedProducts = () => {
-  const { salesCardProducts } = useContext(ProductContext);
+  const { salesCardProducts, sum } = useContext(ProductContext);
   return (
     <div
       className="offcanvas offcanvas-end"
@@ -30,7 +30,7 @@ const SelectedProducts = () => {
 
         <div className="d-flex justify-content-between align-items-center">
           <span className="fw-bold fs-5" style={{ color: "#ff7010" }}>
-            Итого: 2 379 ₽
+            Итого: {sum} ₽
           </span>
           <Button value="Оформить заказ" />
         </div>

@@ -4,36 +4,8 @@ import "./FilterStyle.css";
 import Button from "../Button";
 import { ProductContext } from "../../contexts/ProductContextProvider";
 
-const FilterMenus = ({ menu }) => {
-  const { updatedFilterData, filterFunction } = useContext(ProductContext);
-  const curr = updatedFilterData.filter((item) => item.type === menu);
-
-  return (
-    <div className="my-2">
-      <p className="opacity-75 mb-1">{curr[0].type}</p>
-      <div className="d-flex flex-wrap gap-2">
-        {curr
-          .filter((item) => item.type === menu)
-          .map((item) => {
-            return (
-              <button
-                className={`filter-btn border`}
-                key={item.id}
-                style={{ backgroundColor: `${item.selected && "#ff7010"}` }}
-                onClick={() => filterFunction(item.id)}
-              >
-                {item.name}
-              </button>
-            );
-          })}
-      </div>
-    </div>
-  );
-};
-
 const Fillter = ({ product, id }) => {
   const { filterMenus } = useContext(ProductContext);
-
   return (
     <>
       <div className={`my-4 d-flex justify-content-between align-items-center`}>
@@ -85,3 +57,30 @@ const Fillter = ({ product, id }) => {
 };
 
 export default Fillter;
+
+const FilterMenus = ({ menu }) => {
+  const { updatedFilterData, filterFunction } = useContext(ProductContext);
+  const curr = updatedFilterData.filter((item) => item.type === menu);
+
+  return (
+    <div className="my-2">
+      <p className="opacity-75 mb-1">{curr[0].type}</p>
+      <div className="d-flex flex-wrap gap-2">
+        {curr
+          .filter((item) => item.type === menu)
+          .map((item) => {
+            return (
+              <button
+                className={`filter-btn border`}
+                key={item.id}
+                style={{ backgroundColor: `${item.selected && "#ff7010"}` }}
+                onClick={() => filterFunction(item.id)}
+              >
+                {item.name}
+              </button>
+            );
+          })}
+      </div>
+    </div>
+  );
+};

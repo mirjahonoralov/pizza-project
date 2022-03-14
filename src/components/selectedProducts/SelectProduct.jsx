@@ -3,7 +3,7 @@ import { ProductContext } from "../../contexts/ProductContextProvider";
 
 const SelectedProduct = ({ product }) => {
   const { img, title, price, desc, defaultSize, count } = product;
-  const { increaseProductCount } = useContext(ProductContext);
+  const { productCounter } = useContext(ProductContext);
 
   return (
     <div
@@ -21,7 +21,11 @@ const SelectedProduct = ({ product }) => {
             className="btn-group rounded-3"
             style={{ backgroundColor: "#FFEEE2" }}
           >
-            <button type="button" className="btn btn-sm ">
+            <button
+              type="button"
+              className="btn btn-sm"
+              onClick={() => productCounter(product, "decrease")}
+            >
               -
             </button>
             <button type="button" className="btn btn-sm ">
@@ -30,7 +34,7 @@ const SelectedProduct = ({ product }) => {
             <button
               type="button"
               className="btn btn-sm"
-              onClick={() => increaseProductCount(product)}
+              onClick={() => productCounter(product, "increase")}
             >
               +
             </button>

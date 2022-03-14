@@ -6,11 +6,6 @@ import ProductModal from "./ProductModal";
 const PruductCard = ({ product }) => {
   const { img, title, text, price, isNew } = product;
   const { addProduct } = useContext(ProductContext);
-  const [isDisabled, setIsDisabled] = useState(false);
-  const clicked = (item) => {
-    addProduct(item);
-    setIsDisabled("disabled");
-  };
 
   return (
     <>
@@ -45,8 +40,19 @@ const PruductCard = ({ product }) => {
             <h5 className="fw-bold">{title}</h5>
             <p>{text}</p>
             <div className="d-flex justify-content-between align-items-center">
-              <div onClick={() => clicked(product)}>
-                <Button value="Выбрать" isDisabled={isDisabled} />
+              <div
+                onClick={() => addProduct(product)}
+                style={{ position: "relative" }}
+              >
+                <Button value="Выбрать" />
+                {product.count > 0 && (
+                  <div
+                    className="badge bg-secondary rounded-pill position-absolute"
+                    style={{ right: "-10px", top: "-10px" }}
+                  >
+                    {product.count}
+                  </div>
+                )}
               </div>
               <span className="fw-bold" style={{ color: "#ff7010" }}>
                 от {price} ₽
