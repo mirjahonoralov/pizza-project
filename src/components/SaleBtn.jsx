@@ -15,8 +15,8 @@ const SaleBtn = ({ value, icon }) => {
   return (
     <Btn
       data-bs-toggle="offcanvas"
-      data-bs-target="#saleCard"
-      aria-controls="offcanvasRight"
+      data-bs-target="#saleBtn"
+      aria-controls="saleBtn"
       className="d-none d-sm-block"
     >
       {icon && <img src={icon} alt="" className="me-1" />} {value} ₽

@@ -3,7 +3,6 @@ import location from "../../assets/icons/Location.png";
 import accountIcon from "../../assets/icons/Account.png";
 import pizza from "../../assets/icons/Group 2.png";
 import card from "../../assets/icons/Group 94.png";
-import Button from "../Button";
 // import { BsChevronDown } from "react-icons/bs";
 import { ProductContext } from "../../contexts/ProductContextProvider";
 import SelectedProducts from "../selectedProducts/SelectedProducts";
@@ -57,7 +56,7 @@ const Navbar = () => {
         className={`navbar bg-white py-3 ${fixedNav}  border-top`}
         style={{ zIndex: 5, transform: "0.5s linear all" }}
       >
-        <div className="container bg-white ">
+        <div className="container bg-white">
           <div>
             <img src={pizza} alt="" /> Куда пицца
           </div>
@@ -68,7 +67,7 @@ const Navbar = () => {
           ) : (
             <BsBarChartSteps
               onClick={() => setClick(!click)}
-              className="d -block d-sm-none color-dark text-dark"
+              className="d-block d-sm-none text-dark"
             />
           )}
           {/* ------- nav toggle ------ */}
@@ -139,6 +138,7 @@ const Navbar = () => {
           <SelectedProducts />
         </div>
       </section>
+
       <NavToggleMenus click={click} />
     </>
   );

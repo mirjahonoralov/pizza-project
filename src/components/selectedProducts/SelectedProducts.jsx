@@ -9,8 +9,8 @@ const SelectedProducts = () => {
     <div
       className="offcanvas offcanvas-end"
       tabIndex="-1"
-      id="saleCard"
-      aria-labelledby="offcanvasRightLabel"
+      id="saleBtn"
+      aria-labelledby="saleBtn"
     >
       <div className="offcanvas-body">
         <div className="d-flex justify-content-between align-items-center">

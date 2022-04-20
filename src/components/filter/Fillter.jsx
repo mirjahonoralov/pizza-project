@@ -14,16 +14,16 @@ const Fillter = ({ product, id }) => {
           className="btn bg-white"
           type="button"
           data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight"
-          aria-controls="offcanvasRight"
+          data-bs-target="#offcanvasLeft"
+          aria-controls="offcanvasLeft"
         >
           <img src={filter} alt="" /> Фильтры
         </div>
         <div
-          className="offcanvas offcanvas-end"
-          id="offcanvasRight"
+          className="offcanvas offcanvas-start"
+          id="offcanvasLeft"
           tabIndex="-1"
-          aria-labelledby="offcanvasRightLabel"
+          aria-labelledby="offcanvasLeftLabel"
         >
           <div
             className="p-3 bg-white offcanvas-body"

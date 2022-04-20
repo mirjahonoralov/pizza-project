@@ -1,13 +1,17 @@
 import React from "react";
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
+import logo from "../../assets/icons/Group 2.png";
 
 const Footer = () => {
   return (
     <div className="container">
-      <div className="row">
+      <div className="d-flex border-top p-3 align-items-start">
         <div className="col-3 flex-column justify-content-between">
-          <h2 className="mb-3">Сладкий перец</h2>
+          <div className="d-flex gap-3 mb-3">
+            <img src={logo} alt="logo" style={{ width: "40px" }} />
+            <h3>Куда пицца</h3>
+          </div>
           <p>© Copyright 2021 — Куда Пицца</p>
         </div>
         <div className="col-3 flex-column d-flex ">
@@ -23,7 +27,7 @@ const Footer = () => {
           <p>Поддержка</p>
           <p>Отследить заказ</p>
         </div>
-        <div className="flex-column border-top p-3">
+        <div className="flex-column ">
           <h4 className="mb-3">Контакты</h4>
           <p className="d-flex align-items-center gap-1">
             <IoCallOutline /> +7 (926) 223-10-11

@@ -3,7 +3,7 @@ import "./globalStyle.css";
 import Footer from "./components/footer/Footer";
 function App() {
   return (
-    <div className="App bg-light">
+    <div className="bg-light">
       <Home />
       <Footer />
     </div>
