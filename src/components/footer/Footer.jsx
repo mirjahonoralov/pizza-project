@@ -1,4 +1,6 @@
 import React from "react";
+import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -21,13 +23,21 @@ const Footer = () => {
           <p>Поддержка</p>
           <p>Отследить заказ</p>
         </div>
-        <div className="col-3 flex-column">
+        <div className="flex-column border-top p-3">
           <h4 className="mb-3">Контакты</h4>
-          <p>+7 (926) 223-10-11</p>
-          <p>Москва, ул. Юных Ленинцев, д.99</p>
+          <p className="d-flex align-items-center gap-1">
+            <IoCallOutline /> +7 (926) 223-10-11
+          </p>
+          <p className="d-flex align-items-center gap-1">
+            <IoLocationOutline /> Москва, ул. Юных Ленинцев, д.99
+          </p>
           <p className="d-flex gap-3">
-            <span>Facebok</span>
-            <span>Instagram</span>
+            <span className="d-flex align-items-center gap-1">
+              <BsFacebook /> Facebok
+            </span>
+            <span className="d-flex align-items-center gap-1">
+              <BsInstagram /> Instagram
+            </span>
           </p>
         </div>
       </div>

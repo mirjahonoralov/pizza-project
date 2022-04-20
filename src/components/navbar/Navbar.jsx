@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
-import location from "../assets/icons/Location.png";
-import accountIcon from "../assets/icons/Account.png";
-import pizza from "../assets/icons/Group 2.png";
-import card from "../assets/icons/Group 94.png";
-import Button from "./Button";
+import location from "../../assets/icons/Location.png";
+import accountIcon from "../../assets/icons/Account.png";
+import pizza from "../../assets/icons/Group 2.png";
+import card from "../../assets/icons/Group 94.png";
+import Button from "../Button";
 // import { BsChevronDown } from "react-icons/bs";
-import { ProductContext } from "../contexts/ProductContextProvider";
-import SelectedProducts from "./selectedProducts/SelectedProducts";
-import SaleBtn from "./SaleBtn";
+import { ProductContext } from "../../contexts/ProductContextProvider";
+import SelectedProducts from "../selectedProducts/SelectedProducts";
+import SaleBtn from "../SaleBtn";
+import { BsChevronDown, BsBarChartSteps } from "react-icons/bs";
+import { GrClose } from "react-icons/gr";
+import NavToggleMenus from "./NavToggleMenus";
 
 const Navbar = () => {
   const { sum } = useContext(ProductContext);
@@ -22,22 +25,24 @@ const Navbar = () => {
       setFixedNav("");
     }
   }
-
   window.addEventListener("scroll", scroll);
+
+  const [click, setClick] = useState(false);
 
   return (
     <>
-      <section className="py-2 bg-white mb-1" id="header">
+      {/* ------ header ------ */}
+      <section className="py-2 bg-white" id="header">
         <div className="container">
           <div className="justify-content-between aligin-items-center d-flex">
-            <div className="">
+            <div className="d-flex gap-4">
               <span>
-                <img src={location} alt="not found" /> Москва
+                <img src={location} alt="not found" /> Москва <BsChevronDown />
               </span>
-              <span>Проверить адрес</span>
-              <span>Среднее время доставки*:00:24:19</span>
+              <span className="d-none d-lg-block">Проверить адрес</span>
+              <span>Среднее время доставки*: 00:24:19</span>
             </div>
-            <div className="">
+            <div className="justify-content-between aligin-items-center d-none d-lg-flex">
               <span>Время работы: c 11:00 до 23:00</span>
               <span className="ms-5">
                 <img src={accountIcon} alt="" /> Войти в аккаунт
@@ -49,13 +54,25 @@ const Navbar = () => {
 
       {/* ----navbar---- */}
       <section
-        className={`navbar bg-white py-3 ${fixedNav}`}
+        className={`navbar bg-white py-3 ${fixedNav}  border-top`}
         style={{ zIndex: 5, transform: "0.5s linear all" }}
       >
-        <div className={`container  bg-white `}>
+        <div className="container bg-white ">
           <div>
             <img src={pizza} alt="" /> Куда пицца
           </div>
+
+          {/* ------- nav toggle ------ */}
+          {click ? (
+            <GrClose onClick={() => setClick(!click)} />
+          ) : (
+            <BsBarChartSteps
+              onClick={() => setClick(!click)}
+              className="d -block d-sm-none color-dark text-dark"
+            />
+          )}
+          {/* ------- nav toggle ------ */}
+
           <div className={` ${hidden} menus d-flex gap-4 align-items-center`}>
             <a href="#discount">Акции</a>
             <a href="#pizza">Пицца</a>
@@ -122,6 +139,7 @@ const Navbar = () => {
           <SelectedProducts />
         </div>
       </section>
+      <NavToggleMenus click={click} />
     </>
   );
 };

@@ -17,6 +17,7 @@ const SaleBtn = ({ value, icon }) => {
       data-bs-toggle="offcanvas"
       data-bs-target="#saleCard"
       aria-controls="offcanvasRight"
+      className="d-none d-sm-block"
     >
       {icon && <img src={icon} alt="" className="me-1" />} {value} ₽
     </Btn>

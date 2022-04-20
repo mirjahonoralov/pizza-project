@@ -24,9 +24,10 @@ const SelectedProducts = () => {
         </div>
 
         {salesCardProducts &&
-          salesCardProducts.map((product, id) => (
-            <SelectedProduct key={id} product={product} />
-          ))}
+          salesCardProducts.map((product, id) => {
+            if (product.count)
+              return <SelectedProduct key={id} product={product} />;
+          })}
 
         <div className="d-flex justify-content-between align-items-center">
           <span className="fw-bold fs-5" style={{ color: "#ff7010" }}>

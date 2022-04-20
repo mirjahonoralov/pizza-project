@@ -1,0 +1,30 @@
+.cards-section {
+  overflow-x: scroll;
+}
+
+.mini-card {
+  border-radius: 6px;
+}
+
+.mini-card img {
+  /* width: 40%; */
+}
+
+.big-card,
+.img-wapper {
+  border-radius: 12px;
+}
+
+.big-card:nth-child(even) img {
+  padding: 45px 0;
+}
+
+/* .big-card {
+  overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  .big-card {
+    overflow: visible;
+  }
+} */
