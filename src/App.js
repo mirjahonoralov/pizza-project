@@ -1,12 +1,13 @@
 import Home from "./pages/Home";
 import "./globalStyle.css";
-import Footer from "./components/footer/Footer";
+import ProductContextProvider from "./contexts/ProductContextProvider";
 function App() {
   return (
-    <div className="bg-light">
-      <Home />
-      <Footer />
-    </div>
+    <ProductContextProvider>
+      <div className="bg-light">
+        <Home />
+      </div>
+    </ProductContextProvider>
   );
 }
 

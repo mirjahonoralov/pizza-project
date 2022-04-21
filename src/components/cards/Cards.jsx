@@ -13,15 +13,17 @@ const Cards = () => {
           })}
         </div>
 
-        <div className="d-flex gap-5 mt-4 mt-sm-5">
-          {bigCardsData.map((item, id) => (
-            <BigCard
-              key={id}
-              img={item.img}
-              text={item.text}
-              bgColor={item.bgColor}
-            />
-          ))}
+        <div>
+          <div className="big-cards d-flex gap-3 gap-lg-4 mt-4 mt-sm-5">
+            {bigCardsData.map((item, id) => (
+              <BigCard
+                key={id}
+                img={item.img}
+                text={item.text}
+                bgColor={item.bgColor}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

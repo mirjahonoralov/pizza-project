@@ -8,7 +8,7 @@ const SelectedProduct = ({ product }) => {
   return (
     <div
       className="d-flex p-3 align-items-center border mb-3"
-      style={{ borderRadius: "12px" }}
+      style={{ borderRadius: "12px", boxSizing: "border-box" }}
     >
       <img src={img} alt="" style={{ width: "30%" }} />
       <div className="d-flex flex-column ms-2">

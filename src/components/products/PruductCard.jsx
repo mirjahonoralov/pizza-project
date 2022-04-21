@@ -9,7 +9,7 @@ const PruductCard = ({ product }) => {
 
   return (
     <>
-      <div className="col-3 p-3">
+      <div className="col-sm-6 col-md-4 col-lg-3 p-2 p-lg-3">
         <div
           className="bg-white d-flex flex-column justify-content-between border"
           style={{

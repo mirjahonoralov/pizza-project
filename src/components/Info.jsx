@@ -4,7 +4,7 @@ const Info = () => {
   return (
     <section className="my-5">
       <div className="container">
-        <div className="px-5">
+        <div className="">
           <h1>Доставка пиццы в Москве</h1>
           <p>
             Захотелось чего-то вкусного и сытного? Желание простое и понятное,

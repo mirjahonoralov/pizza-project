@@ -25,7 +25,6 @@ const Navbar = () => {
     }
   }
   window.addEventListener("scroll", scroll);
-
   const [click, setClick] = useState(false);
 
   return (
@@ -72,7 +71,7 @@ const Navbar = () => {
           )}
           {/* ------- nav toggle ------ */}
 
-          <div className={` ${hidden} menus d-flex gap-4 align-items-center`}>
+          <div className={`${hidden} menus d-flex gap-4 align-items-center`}>
             <a href="#discount">Акции</a>
             <a href="#pizza">Пицца</a>
             <a href="#sushi">Суши</a>
@@ -134,6 +133,7 @@ const Navbar = () => {
               Другое <BsChevronDown />
             </a> */}
           </div>
+
           <SaleBtn value={sum} icon={card} />
           <SelectedProducts />
         </div>

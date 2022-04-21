@@ -10,8 +10,8 @@ export const Card = ({ icon, title }) => {
 export const BigCard = ({ img, text, bgColor }) => {
   return (
     <div
-      className="big-card col-sm text-white d-flex flex-column"
-      style={{ backgroundColor: bgColor }}
+      className="big-card text-white d-flex flex-column"
+      style={{ backgroundColor: bgColor, minWidth: "250px" }}
     >
       <div className="overflow-hidden img-wapper" style={{ width: "100%" }}>
         <img src={img} alt="" style={{ width: "100%" }} />

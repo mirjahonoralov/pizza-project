@@ -7,8 +7,25 @@ const Btn = styled.button`
   background-color: #ff7010;
   border: none;
   color: #fff;
-  /* border: ${(props) => (props.outline ? "1px solid #ff7010" : "nones")}; */
   cursor: pointer;
+`;
+
+const MobileBtn = styled.button`
+  border-radius: 100%;
+  padding: 15px;
+  background-color: #ff7010;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: sticky;
+  bottom: 20px;
+  left: 80%;
+
+  span {
+    position: absolute;
+    /* top: 10px; */
+    border: 1px solid #ff7010;
+  }
 `;
 
 const SaleBtn = ({ value, icon }) => {
@@ -21,6 +38,21 @@ const SaleBtn = ({ value, icon }) => {
     >
       {icon && <img src={icon} alt="" className="me-1" />} {value} ₽
     </Btn>
+  );
+};
+
+export const MobileCardBtn = ({ icon, count }) => {
+  return (
+    <MobileBtn
+      data-bs-toggle="offcanvas"
+      data-bs-target="#saleBtn"
+      aria-controls="saleBtn"
+    >
+      {icon && <img src={icon} alt="" />}
+      <span className="badge bg-white text-dark rounded-circle top-0">
+        {count}
+      </span>
+    </MobileBtn>
   );
 };
 
