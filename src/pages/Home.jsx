@@ -15,7 +15,7 @@ const Home = () => {
   window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <Navbar />
       <Cards />
       <SearchBar />
@@ -28,7 +28,7 @@ const Home = () => {
         <MobileCardBtn icon={card} count={salesCardProducts.length} />
       )}
       {/* mobileBtn */}
-    </>
+    </div>
   );
 };
 

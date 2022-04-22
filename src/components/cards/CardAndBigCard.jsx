@@ -1,6 +1,6 @@
 export const Card = ({ icon, title }) => {
   return (
-    <div className="mini-card col p-2 gap-2 gap-sm p-sm-4 border border-1 d-flex flex-sm-column justify-content-center align-items-center bg-white">
+    <div className="mini-card col p-2 gap-2 gap-sm p-lg-4 border border-1 d-flex flex-md-column justify-content-center align-items-center bg-white">
       <img src={icon} alt="" />
       <div>{title}</div>
     </div>
@@ -11,7 +11,7 @@ export const BigCard = ({ img, text, bgColor }) => {
   return (
     <div
       className="big-card text-white d-flex flex-column"
-      style={{ backgroundColor: bgColor, minWidth: "250px" }}
+      style={{ backgroundColor: bgColor }}
     >
       <div className="overflow-hidden img-wapper" style={{ width: "100%" }}>
         <img src={img} alt="" style={{ width: "100%" }} />

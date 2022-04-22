@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContext } from "../../contexts/ProductContextProvider";
 
 const MIniProductCard = ({ product }) => {
   const { img, title, price, desc, defaultSize, count } = product;
+  const { addProduct } = useContext(ProductContext);
 
   return (
     <div
@@ -21,9 +23,12 @@ const MIniProductCard = ({ product }) => {
             padding: "5px 15px",
             background: "#FFEEE2",
             display: "block",
+            cursor: "pointer",
           }}
+          onClick={() => addProduct(product)}
         >
           {price} ₽
+          {count > 0 && <span className="ms-2 badge bg-warning">{count}</span>}
         </span>
       </div>
     </div>

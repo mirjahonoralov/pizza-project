@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import location from "../../assets/icons/Location.png";
 import accountIcon from "../../assets/icons/Account.png";
 import pizza from "../../assets/icons/Group 2.png";
@@ -15,6 +15,8 @@ const Navbar = () => {
   const { sum } = useContext(ProductContext);
   const [hidden, setHidden] = useState("d-none");
   const [fixedNav, setFixedNav] = useState("");
+  const [click, setClick] = useState(false);
+  const [links, setLinks] = useState(false);
   function scroll() {
     if (window.scrollY > 100) {
       setHidden("d-block");
@@ -25,7 +27,14 @@ const Navbar = () => {
     }
   }
   window.addEventListener("scroll", scroll);
-  const [click, setClick] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth > 992) setLinks(true);
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 992) setLinks(true);
+      else setLinks(false);
+    });
+  }, []);
 
   return (
     <>
@@ -71,68 +80,70 @@ const Navbar = () => {
           )}
           {/* ------- nav toggle ------ */}
 
-          <div className={`${hidden} menus d-flex gap-4 align-items-center`}>
-            <a href="#discount">Акции</a>
-            <a href="#pizza">Пицца</a>
-            <a href="#sushi">Суши</a>
-            <a href="#drik">Напитки</a>
-            <a href="#snack">Закуски</a>
-            <a href="#kombo">Комбо</a>
-            <a href="#dessert">Десерты</a>
-            <a href="#souce">Соусы</a>
+          {links && (
+            <div className={`${hidden} menus d-flex gap-4 align-items-center`}>
+              <a href="#discount">Акции</a>
+              <a href="#pizza">Пицца</a>
+              <a href="#sushi">Суши</a>
+              <a href="#drik">Напитки</a>
+              <a href="#snack">Закуски</a>
+              <a href="#kombo">Комбо</a>
+              <a href="#dessert">Десерты</a>
+              <a href="#souce">Соусы</a>
 
-            <div className="dropdown">
-              <button
-                className="btn dropdown-toggle"
-                type="button"
-                id="more"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Другое
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="more">
-                <li>
-                  <a className="dropdown-item" href="#discount">
-                    Акции
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#pizza">
-                    Пользовательское соглашение
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#guarantee">
-                    Условия гарантии
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#restaruant">
-                    Ресторан
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#contact">
-                    Контакты
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#support">
-                    Поддержка
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#order">
-                    Отследить заказ
-                  </a>
-                </li>
-              </ul>
-            </div>
-            {/* <a href="#">
+              <div className="dropdown">
+                <button
+                  className="btn dropdown-toggle"
+                  type="button"
+                  id="more"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Другое
+                </button>
+                <ul className="dropdown-menu" aria-labelledby="more">
+                  <li>
+                    <a className="dropdown-item" href="#discount">
+                      Акции
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#pizza">
+                      Пользовательское соглашение
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#guarantee">
+                      Условия гарантии
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#restaruant">
+                      Ресторан
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#contact">
+                      Контакты
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#support">
+                      Поддержка
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#order">
+                      Отследить заказ
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {/* <a href="#">
               Другое <BsChevronDown />
             </a> */}
-          </div>
+            </div>
+          )}
 
           <SaleBtn value={sum} icon={card} />
           <SelectedProducts />

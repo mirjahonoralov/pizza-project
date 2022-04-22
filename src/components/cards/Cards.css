@@ -1,5 +1,11 @@
-.cards-section {
-  overflow-x: auto;
+@media (max-width: 768px) {
+  .cards-section {
+    overflow-x: auto;
+  }
+
+  .big-card {
+    min-width: 250px;
+  }
 }
 
 .cards-container {

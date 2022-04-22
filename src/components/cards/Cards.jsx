@@ -1,14 +1,14 @@
 import React from "react";
 import { BigCard, Card } from "./CardAndBigCard";
-import { cardsSData, bigCardsData } from "./CardsData";
+import { cardsData, bigCardsData } from "./CardsData";
 import "./Cards.css";
 
 const Cards = () => {
   return (
-    <section className="py-4 cards-section">
+    <section className="py-4 cards-section mb-3 mb-md-0">
       <div className="container">
         <div className="d-flex gap-3">
-          {cardsSData.map((item, id) => {
+          {cardsData.map((item, id) => {
             return <Card key={id} icon={item.icon} title={item.title} />;
           })}
         </div>

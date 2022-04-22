@@ -9,7 +9,7 @@ import Sauce from "../../assets/icons/Sauce.png";
 import Pizza1 from "../../assets/icons/Group 82.png";
 import Pizza2 from "../../assets/icons/Group 83.png";
 
-export const cardsSData = [
+export const cardsData = [
   { icon: Fire, title: "Акции" },
   { icon: Pizza, title: "Пицца" },
   { icon: Sushi, title: "Суши" },
