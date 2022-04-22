@@ -8,14 +8,12 @@ import { ProductContext } from "../../contexts/ProductContextProvider";
 import SelectedProducts from "../selectedProducts/SelectedProducts";
 import SaleBtn from "../SaleBtn";
 import { BsChevronDown, BsBarChartSteps } from "react-icons/bs";
-import { GrClose } from "react-icons/gr";
 import NavToggleMenus from "./NavToggleMenus";
 
 const Navbar = () => {
   const { sum } = useContext(ProductContext);
   const [hidden, setHidden] = useState("d-none");
   const [fixedNav, setFixedNav] = useState("");
-  const [click, setClick] = useState(false);
   const [links, setLinks] = useState(false);
   function scroll() {
     if (window.scrollY > 100) {
@@ -70,14 +68,14 @@ const Navbar = () => {
           </div>
 
           {/* ------- nav toggle ------ */}
-          {click ? (
-            <GrClose onClick={() => setClick(!click)} />
-          ) : (
-            <BsBarChartSteps
-              onClick={() => setClick(!click)}
-              className="d-block d-sm-none text-dark"
-            />
-          )}
+          <div
+            data-bs-toggle="offcanvas"
+            href="#offcanvasExample"
+            aria-controls="offcanvasExample"
+          >
+            <BsBarChartSteps className="d-block d-sm-none text-dark" />
+          </div>
+
           {/* ------- nav toggle ------ */}
 
           {links && (
@@ -150,7 +148,7 @@ const Navbar = () => {
         </div>
       </section>
 
-      <NavToggleMenus click={click} />
+      <NavToggleMenus />
     </>
   );
 };

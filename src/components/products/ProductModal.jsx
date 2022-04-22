@@ -9,35 +9,7 @@ import Modal from "react-modal/lib/components/Modal";
 const [icon1, icon2, icon3, icon4, icon5, icon6, icon7] = productModalIcons;
 
 const ProductModal = ({ img }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
-    // <>
-    //   <button onClick={() => setModalIsOpen(true)}>MODAL</button>
-    //   <Modal
-    //     isOpen={modalIsOpen}
-    //     onRequestClose={() => setModalIsOpen(false)}
-    //     style={{
-    //       overlay: {},
-    //       content: {
-    //         position: "absolute",
-    //         width: "40%",
-    //         left: "60%",
-
-    //         height: "100%",
-    //         top: "0px",
-    //         zIndex: 9999999999,
-    //       },
-    //     }}
-    //   >
-    //     <div className="modal_header">
-    //       <h3>Ваш заказ</h3>
-    //       <button onClick={() => setModalIsOpen(false)}>X</button>
-    //     </div>
-    //     <div className="modal_item">
-    //       <p>text</p>
-    //     </div>
-    //   </Modal>
-    // </>
     <div
       className="modal fade p-5"
       id="product-modal"
@@ -45,7 +17,7 @@ const ProductModal = ({ img }) => {
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div className="modal-dialog modal-lg">
+      <div className="modal-dialog modal-xlg">
         <div className="modal-content">
           <div
             className="d-flex gap-3 bg-white p-4 ps-0"

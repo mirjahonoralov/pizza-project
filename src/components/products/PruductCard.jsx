@@ -63,7 +63,7 @@ const PruductCard = ({ product }) => {
       </div>
 
       {/* ------modal-------- */}
-      <ProductModal img={img} />
+      {/* <ProductModal img={img} /> */}
     </>
   );
 };
